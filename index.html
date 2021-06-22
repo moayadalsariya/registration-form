@@ -21,7 +21,7 @@
 
                     </div>
                     <div class="col-6">
-                        <form action="" id='form-vaild'>
+                        <form action="" method="GET" id='form-vaild'>
                             <div class="row">
                                 <h1 class="text-center mx-x">Registeration Form</h1>
                                 <div class="col-6">
@@ -49,8 +49,7 @@
                                         <div class="form-group form-inline">
                                             <label for="Password" class="form-label">Password</label>
                                             <input type="password" class="form-control" id="Password" name="password" placeholder="Password" required>
-                                            <small id="password" class="form-text text-muted">Must be 8-20 characters
-                                                long</small>
+                                            <small id="password" class="form-text text-muted">Must be more than 8 characters</small>
 
                                         </div>
                                     </div>
@@ -83,7 +82,7 @@
                                 <div class="col-12">
                                     <div class="mb-3">
                                         <label for="formFile" class="form-label">Choose image for profile image</label>
-                                        <input class="form-control" name="photo" type="file" id="formFile">
+                                        <input class="form-control" name="photo" accept=".jpg,.png" type="file" id="formFile">
                                     </div>
                                 </div>
                                 <div class="mb-3 form-check">
@@ -107,6 +106,7 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./script.js"></script>
 </body>
 

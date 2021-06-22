@@ -27,7 +27,7 @@ $(() => {
                 equalTo: '[name="password"]'
             },
             photo: {
-                pwcheck: true
+                imgcheck: true
             },
             terms: {
                 required: true
@@ -38,8 +38,17 @@ $(() => {
                 pwcheck: "password must conain characters and numbers"
             },
             photo: {
-                pwcheck: "Image must be png or jpg"
+                imgcheck: "Image must be png or jpg",
+                required: false
             }
+        },
+        submitHandler: function(form) {
+            Swal.fire(
+                'Good job!',
+                'You can submit to server 👍',
+                'success'
+            )
+            return false;
         }
     });
     $.validator.addMethod("pwcheck", function(value) {
@@ -49,7 +58,7 @@ $(() => {
             &&
             /\d/.test(value) // has a digit
     });
-    $.validator.addMethod("imgcheck", function(value) {
-        return (/\.(jpg||png)$/i).test(value);
+    $.validator.addMethod("imgcheck", function(value, element) {
+        return this.optional(element) || (/\.(jpg||png)$/i).test(value);
     });
 })
